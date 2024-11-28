@@ -4,6 +4,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { WelcomeComponent } from './app/welcome/welcome.component';
 
 import { AddMovieComponent } from './app/add-movie/add-movie.component'; 
 import { EditMovieComponent } from './app/edit-movie/edit-movie.component'; 
@@ -18,7 +19,8 @@ bootstrapApplication(AppComponent, {
       FormsModule,
       ReactiveFormsModule,
       RouterModule.forRoot([
-        { path: '', component: MoviesComponent }, 
+        { path: '', component: WelcomeComponent },
+        { path: 'movies', component: MoviesComponent }, 
         { path: 'movie/:id', component: MovieComponent }, 
         { path: 'add-movie', component: AddMovieComponent }, 
         { path: 'edit-movie/:id', component: EditMovieComponent },

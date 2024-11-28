@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common'; // Importar Location
 import { MovieService } from '../movie.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class EditMovieComponent implements OnInit {
     private fb: FormBuilder,
     private movieService: MovieService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private location: Location // Inyectar Location
   ) {
     this.movieForm = this.fb.group({
       title: ['', Validators.required],
@@ -48,5 +50,9 @@ export class EditMovieComponent implements OnInit {
         this.router.navigate(['/movies']);
       });
     }
+  }
+
+  goBack(): void {
+    this.location.back(); // Implementar la función goBack
   }
 }

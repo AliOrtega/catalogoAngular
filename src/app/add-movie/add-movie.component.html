@@ -1,12 +1,12 @@
 <div class="container mt-5">
-  <h2 class="text-primary">Add New Movie</h2>
+  <h2 class="text-primary">Agregar Película Nueva</h2>
   <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="title">Título de la película</label>
       <input type="text" id="title" class="form-control" formControlName="title" required>
     </div>
     <div class="form-group">
-      <label for="synopsis">Synopsis</label>
+      <label for="synopsis">Sinopsis</label>
       <textarea id="synopsis" class="form-control" formControlName="synopsis" required></textarea>
     </div>
     <div class="form-group">
@@ -17,6 +17,9 @@
       <label for="cover">URL del poster de la película</label>
       <input type="text" id="cover" class="form-control" formControlName="cover" required>
     </div>
-    <button type="submit" class="btn btn-primary mt-3">Agregar película</button>
+    <div class="d-flex justify-content-between mt-3">
+      <button type="submit" class="btn btn-primary">Agregar película</button>
+      <button type="button" class="btn btn-secondary" (click)="goBack()">Regresar</button> <!-- Botón Regresar -->
+    </div>
   </form>
 </div>

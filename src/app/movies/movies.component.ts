@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router'; // Importar Router
 import { MovieService } from '../movie.service';
 
 @Component({
@@ -13,11 +13,18 @@ import { MovieService } from '../movie.service';
 export class MoviesComponent implements OnInit {
   movies: any[] = [];
 
-  constructor(private movieService: MovieService) {}
+  constructor(
+    private movieService: MovieService,
+    private router: Router // Inyectar Router
+  ) {}
 
   ngOnInit(): void {
     this.movieService.getMovies().subscribe((data: any[]) => {
       this.movies = data;
     });
+  }
+
+  navigateToMovies(): void {
+    this.router.navigate(['/movies']); 
   }
 }

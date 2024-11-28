@@ -1,71 +1,194 @@
+/* Fondo general del sitio */
 body {
-    background-image: url('assets/imagenes/fondo.jpg');
-    background-size: cover;
-  }
-  
-  .header {
-    background-color: #0081a7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100px;
-    border-radius: 10px;
-  }
-  
-  .header img {
-    width: 3rem;
-    height: 3rem;
-  }
-  
-  .body {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    padding: 16px;
-    box-sizing: border-box;
-  }
-  
-  .grid-item {
-    background-color: #4cafaf;
-    color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    padding: 10px;
-    font-size: 1.2rem;
-  }
-  
-  .video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .video-container iframe {
-    width: 100%;
-    max-width: 560px;
-    height: 315px;
-  }
-  
-  .footer {
-    background-color: #00afb9;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px 0;
-    margin: 0;
-    line-height: 1.5;
-    font-size: 1rem;
-  }
-  
+  background-image: url('assets/imagenes/fondo.jpg');
+  background-size: cover;
+}
+
+/* Encabezado */
+.header {
+  background-color: #0081a7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.header img {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Estilos personalizados para enlaces de navegación */
+.custom-nav-link { 
+  padding: 10px 20px; 
+  color: #007bff; 
+  text-decoration: none; 
+}
+
+.custom-nav-link:hover, 
+.custom-nav-link.active { 
+  text-decoration: none;
+  color: #0056b3;  
+}
+
+/* Botón de navbar */
+.navbar-toggler { 
+  margin-left: auto; 
+}
+
+/* Cuerpo de contenido */
+.body {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Contenedor tipo grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.grid-item {
+  background-color: #4cafaf;
+  color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+/* Contenedor de video */
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+}
+
+/* Pie de página */
+.footer {
+  background-color: #00afb9;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+/* Botones personalizados */
+.btn-custom {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #c82333;
+}
+
+.btn-custom-secondary {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-custom-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-custom-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-custom-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-custom-success {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-custom-success:hover {
+  background-color: #218838;
+}
+
+/* Grupo de botones */
+.btn-group .btn-custom,
+.btn-group .btn-custom-secondary {
+  margin-right: 10px;
+}
+
+/* Página de inicio */
+.start-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.start-container {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.start-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-button:hover {
+  background-color: #0056b3;
+}

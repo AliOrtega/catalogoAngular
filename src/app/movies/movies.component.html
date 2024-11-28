@@ -1,4 +1,19 @@
 <div class="container mt-5">
+  <!-- Navbar --> 
+ <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3"> 
+  <a class="navbar-brand custom-nav-link" routerLink="/">Inicio</a> 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
+    <span class="navbar-toggler-icon"></span> 
+  </button> 
+  <div class="collapse navbar-collapse" id="navbarNav"> 
+    <ul class="navbar-nav mr-auto"> 
+      <li class="nav-item"> 
+        <a class="custom-nav-link" (click)="navigateToMovies()">Lista completa</a>
+      </li>  
+    </ul> 
+  </div>
+</nav>
+
   <h2 class="text-center text-primary mb-4">Lista de películas</h2>
   <div class="row justify-content-center">
     <div *ngFor="let movie of movies" class="col-md-4 d-flex align-items-stretch mb-4">
@@ -9,12 +24,14 @@
           <p class="card-text">{{ movie.synopsis }}</p>
           <p class="card-text mt-auto"><small class="text-muted">{{ movie.year }}</small></p>
           <div class="btn-group mt-2" role="group">
-            <a [routerLink]="['/movie', movie.id]" class="btn btn-primary">Más detalles</a>
-            <a [routerLink]="['/edit-movie', movie.id]" class="btn btn-secondary">Editar película</a>
+            <a [routerLink]="['/movie', movie.id]" class="btn btn-custom-primary">Más detalles</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="text-center mt-4"> <a [routerLink]="['/add-movie']" class="btn btn-success">Agregar una nueva película</a> </div>
+
+  <div class="text-center mt-4">
+    <a [routerLink]="['/add-movie']" class="btn btn-custom-success">Agregar una nueva película</a>
+  </div>
 </div>

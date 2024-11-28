@@ -1,9 +1,29 @@
-<div class="card mb-4 shadow-sm">
+  <!-- Navbar --> 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3"> 
+    <a class="navbar-brand custom-nav-link" routerLink="/">Inicio</a> 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
+      <span class="navbar-toggler-icon"></span> 
+    </button> 
+    <div class="collapse navbar-collapse" id="navbarNav"> 
+      <ul class="navbar-nav mr-auto"> 
+        <li class="nav-item"> 
+          <a class="custom-nav-link" (click)="navigateToMovies()">Lista completa</a>
+        </li>  
+      </ul> 
+    </div>
+  </nav>
+<div class="container mt-5">
+  <div class="card mb-4 shadow-sm">
     <img [src]="movie.cover" class="card-img-top" alt="{{ movie.title }}">
-    <div class="card-body">
+    <div class="card-body text-center">
       <h5 class="card-title">{{ movie.title }}</h5>
       <p class="card-text">{{ movie.synopsis }}</p>
       <p class="card-text"><small class="text-muted">{{ movie.year }}</small></p>
+      <div class="btn-group mt-2" role="group">
+        <a [routerLink]="['/edit-movie', movie.id]" class="btn btn-custom-secondary">Editar película</a>
+        <button class="btn btn-custom" (click)="confirmDelete(movie.id)">Eliminar película</button>
+        <button class="btn btn-custom-primary" (click)="goBack()">Regresar</button>
+      </div>
     </div>
   </div>
-  
+</div>

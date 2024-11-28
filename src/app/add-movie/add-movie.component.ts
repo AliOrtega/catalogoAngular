@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common'; // Importar Location
 import { MovieService } from '../movie.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class AddMovieComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private movieService: MovieService,
-    private router: Router
+    private router: Router,
+    private location: Location // Inyectar Location
   ) {
     this.movieForm = this.fb.group({
       title: ['', Validators.required],
@@ -29,11 +31,22 @@ export class AddMovieComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit() {
+  onSubmit(): void { 
     if (this.movieForm.valid) {
-      this.movieService.addMovie(this.movieForm.value).subscribe(response => {
-        this.router.navigate(['/movies']);
+      console.log('Form data:', this.movieForm.value); 
+      this.movieService.addMovie(this.movieForm.value).subscribe({
+        next: response => {
+          console.log('Movie added:', response); 
+          this.router.navigate(['/movies']); 
+        }, 
+        error: error => {
+          console.error('Error adding movie:', error); 
+        } 
       });
     }
+  }
+
+  goBack(): void {
+    this.location.back(); 
   }
 }
