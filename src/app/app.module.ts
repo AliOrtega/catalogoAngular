@@ -11,9 +11,9 @@ import { EditMovieComponent } from './edit-movie/edit-movie.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieComponent } from './movie/movie.component';
 import { DeleteMovieComponent } from './delete-movie/delete-movie.component';
-import { FilterMoviesComponent } from './filter-movies/filter-movies.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { RegresarComponent } from './regresar/regresar.component';
+
 
 @NgModule({
   declarations: [ 
@@ -30,8 +30,7 @@ import { RegresarComponent } from './regresar/regresar.component';
     AddMovieComponent,
     EditMovieComponent,
     MoviesComponent,
-    MovieComponent,
-    FilterMoviesComponent,
+    MovieComponent
   ],
   providers: [provideHttpClient()],
   bootstrap: []
