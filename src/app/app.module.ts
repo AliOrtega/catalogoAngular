@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
-
+import { AppComponent } from './app.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { EditMovieComponent } from './edit-movie/edit-movie.component';
 import { MoviesComponent } from './movies/movies.component';
@@ -18,11 +18,12 @@ import { RegresarComponent } from './regresar/regresar.component';
 @NgModule({
   declarations: [ 
     DeleteMovieComponent,
-    RegresarComponent
+    RegresarComponent,
     ],
 
   imports: [
     BrowserModule,
+    AppComponent,
     AppRoutingModule,
     FormsModule,
     WelcomeComponent,
@@ -32,7 +33,7 @@ import { RegresarComponent } from './regresar/regresar.component';
     MoviesComponent,
     MovieComponent
   ],
-  providers: [provideHttpClient()],
+  providers: [provideHttpClient(withInterceptorsFromDi())],
   bootstrap: []
 })
 export class AppModule { }
